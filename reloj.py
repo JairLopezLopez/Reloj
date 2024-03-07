@@ -8,10 +8,14 @@ def convertir_hora_a_palabras(hora):
     
     palabras = ["", "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez",
                 "Once", "Doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho",
-                "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres", "veinticuatro", "Veinticinco", "veintiseis", "veintisiete", "veintiocho"]
+                "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres", "veinticuatro", 
+                "Veinticinco", "veintiseis", "veintisiete", "veintiocho", "Veintinueve"]
     
-    if hora_entero == 0 and minutos_entero == 0:
-        return "Media noche"
+    if hora_entero == 0:
+        if minutos_entero == 0:
+            return "Media noche"
+        else:
+            return f"{palabras[minutos_entero]} minutos después de la media noche"
     elif minutos_entero == 0:
         return f"{palabras[hora_entero]} en punto"
     elif minutos_entero == 15:
